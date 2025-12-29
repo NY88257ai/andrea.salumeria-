@@ -112,20 +112,7 @@ header {
    RUSTIC HERO SECTION
 -------------------------------------------------- */
 
-.hero {
-  padding: 6rem 0;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: #3b2f2f;
-  font-family: "Playfair Display", serif;
-}
-
-.hero {
-  min-height: 450px;
-  max-height: 550px;
-  overflow: hidden;
-}
+.hero { min-height: 450px; max-height: 550px; overflow: hidden; position: relative; z-index: 1; } .accordion { position: relative; z-index: 2; }
 
 /* Soft rustic vignette */
 .hero::after {
