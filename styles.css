@@ -436,3 +436,14 @@ footer {
   pointer-events: none;
 }
 
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.accordion {
+  position: relative;
+  z-index: 2;
+}
+
+
