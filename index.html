@@ -17,6 +17,15 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
+  <!-- Icons (for social media) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -74,16 +83,9 @@
             Our Story
           </button>
         </div>
-
-        <!-- QR Code near order button -->
-        <div class="qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://ny88257ai.github.io/andrea.salumeria-/" alt="QR Code to Menu" class="qr-code">
-          <p class="qr-label">Scan for Menu</p>
-        </div>
-
       </div>
 
-      <!-- HERO IMAGE ROTATOR -->
+      <!-- HERO IMAGE CAROUSEL AREA (right side) -->
       <div class="hero-visual-wrapper">
         <div class="hero-visual" id="hero-visual"></div>
         <div class="hero-visual-overlay"></div>
@@ -92,27 +94,42 @@
     </div>
   </section>
 
+  <!-- OUR STORY / ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p class="section-intro">
+        Andrea Salumeria has been serving the Jersey City community since 1975. What started as a small neighborhood
+        salumeria has grown into a destination for homemade mozzarella, classic Italian sandwiches, imported cheeses,
+        cured meats, and pantry staples from the old country.
+      </p>
+      <p>
+        Nearly fifty years later, the traditions remain the same: quality ingredients, generous portions, and warm,
+        familiar faces behind the counter. Whether you’re grabbing a hero for lunch, ordering trays for a family party,
+        or stocking your kitchen with real Italian products, we’re proud to be part of your table.
+      </p>
+    </div>
+  </section>
+
   <!-- MENU WITH ACCORDIONS -->
   <section id="menu">
     <div class="container">
       <h2>Our Menu</h2>
-      <p class="section-intro">Tap to expand each category.</p>
+      <p class="section-intro">Tap or click a category below to explore what we make fresh for you every day.</p>
 
-      <!-- QR Code in menu section -->
-      <div class="qr-center">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://ny88257ai.github.io/andrea.salumeria-/" class="qr-code">
-        <p class="qr-label">Scan for Full Menu</p>
-      </div>
-
-      <!-- ACCORDION START -->
       <div class="accordion">
 
         <!-- Sandwiches -->
         <div class="accordion-item">
           <button class="accordion-header">Sandwich Menu</button>
           <div class="accordion-content">
-            <p>All your classic favorites, made fresh daily.</p>
-            <!-- You can paste your sandwich list here -->
+            <p>Classic Italian heroes made on fresh bread with premium meats, cheeses, and house‑made toppings.</p>
+            <ul>
+              <li><strong>Andrea Special:</strong> Prosciutto, fresh mozzarella, roasted peppers, olive oil.</li>
+              <li><strong>Italian Combo:</strong> Ham, salami, provolone, lettuce, tomato, oil & vinegar.</li>
+              <li><strong>Fresh Mozzarella Hero:</strong> House‑made mozzarella, tomato, basil, balsamic.</li>
+              <li><strong>Chicken Cutlet:</strong> Breaded cutlet, fresh mozz, broccoli rabe or roasted peppers.</li>
+            </ul>
           </div>
         </div>
 
@@ -120,7 +137,14 @@
         <div class="accordion-item">
           <button class="accordion-header">Imported Cheeses</button>
           <div class="accordion-content">
-            <p>Authentic Italian cheeses, sliced or whole.</p>
+            <p>Hand‑selected Italian cheeses, sliced to order or sold by the piece.</p>
+            <ul>
+              <li>Parmigiano‑Reggiano</li>
+              <li>Pecorino Romano</li>
+              <li>Provolone</li>
+              <li>Fresh Ricotta</li>
+              <li>Locatelli</li>
+            </ul>
           </div>
         </div>
 
@@ -128,7 +152,13 @@
         <div class="accordion-item">
           <button class="accordion-header">Breads</button>
           <div class="accordion-content">
-            <p>Fresh Italian breads delivered daily.</p>
+            <p>Delivered fresh daily from local bakeries.</p>
+            <ul>
+              <li>Italian hero loaves</li>
+              <li>Round Italian bread</li>
+              <li>Semolina loaves</li>
+              <li>Rolls & specialty breads (seasonal)</li>
+            </ul>
           </div>
         </div>
 
@@ -136,7 +166,14 @@
         <div class="accordion-item">
           <button class="accordion-header">Deli Meats</button>
           <div class="accordion-content">
-            <p>Premium meats sliced to order.</p>
+            <p>Premium cold cuts and imported specialties sliced how you like them.</p>
+            <ul>
+              <li>Prosciutto di Parma</li>
+              <li>Mortadella</li>
+              <li>Genoa Salami</li>
+              <li>Capicola</li>
+              <li>Roast beef, turkey, ham, and more</li>
+            </ul>
           </div>
         </div>
 
@@ -144,7 +181,13 @@
         <div class="accordion-item">
           <button class="accordion-header">Salads & Soups</button>
           <div class="accordion-content">
-            <p>Fresh salads and homemade soups.</p>
+            <p>House‑made salads and comforting soups for a quick meal or catering.</p>
+            <ul>
+              <li>Fresh mozzarella & tomato salad</li>
+              <li>Pasta salads</li>
+              <li>Antipasto salad</li>
+              <li>Seasonal soups (call for today’s selection)</li>
+            </ul>
           </div>
         </div>
 
@@ -152,7 +195,13 @@
         <div class="accordion-item">
           <button class="accordion-header">Grocery Items</button>
           <div class="accordion-content">
-            <p>Imported Italian pantry staples.</p>
+            <p>Pantry staples and imported products to bring real Italian flavor home.</p>
+            <ul>
+              <li>Pasta, tomatoes, and olive oils</li>
+              <li>Vinegars and condiments</li>
+              <li>Jarred antipasto and peppers</li>
+              <li>Italian cookies and sweets</li>
+            </ul>
           </div>
         </div>
 
@@ -160,7 +209,13 @@
         <div class="accordion-item">
           <button class="accordion-header">Catering Trays</button>
           <div class="accordion-content">
-            <p>Perfect for parties, holidays, and events.</p>
+            <p>Perfect for holidays, office events, and family gatherings. Call for pricing and custom orders.</p>
+            <ul>
+              <li>Italian hero platters</li>
+              <li>Antipasto and cheese boards</li>
+              <li>Pasta and hot entrées (select items)</li>
+              <li>Salad and side trays</li>
+            </ul>
           </div>
         </div>
 
@@ -169,33 +224,69 @@
           <button class="accordion-header">Coming Soon: Andrea’s Apparel</button>
           <div class="accordion-content">
             <p>Show your love for Andrea’s Salumeria with exclusive merch — shirts, hats, hoodies, and more.</p>
-            <p>We’re designing a line of apparel inspired by our 50-year heritage. Stay tuned for launch details and pre-order information.</p>
+            <p>We’re designing a line of apparel inspired by our 50‑year heritage. Stay tuned for launch details and pre‑order information.</p>
           </div>
         </div>
 
       </div>
-      <!-- ACCORDION END -->
-
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY AS HORIZONTAL CAROUSEL -->
   <section id="gallery">
     <div class="container">
       <h2>Gallery</h2>
-      <p class="section-intro">A look inside Andrea Salumeria.</p>
+      <p class="section-intro">A look inside Andrea Salumeria — trays, sandwiches, and the flavors we’re known for.</p>
 
-      <div id="gallery-grid">
-        <div class="gallery-item"><img src="photos/gallery/footerhero1.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/footerhero2.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/homemadepestopasta.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/saladtray1.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/tray1.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/tray2.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/tray3.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/tray4.jpg" class="gallery-photo"></div>
-        <div class="gallery-item"><img src="photos/gallery/tray5.jpg" class="gallery-photo"></div>
+      <div class="gallery-carousel">
+        <div class="gallery-track">
+          <div class="gallery-slide"><img src="photos/gallery/footerhero1.jpg" alt="Andrea Salumeria deli counter"></div>
+          <div class="gallery-slide"><img src="photos/gallery/footerhero2.jpg" alt="Italian specialties"></div>
+          <div class="gallery-slide"><img src="photos/gallery/homemadepestopasta.jpg" alt="Homemade pesto pasta"></div>
+          <div class="gallery-slide"><img src="photos/gallery/saladtray1.jpg" alt="Salad tray"></div>
+          <div class="gallery-slide"><img src="photos/gallery/tray1.jpg" alt="Catering tray 1"></div>
+          <div class="gallery-slide"><img src="photos/gallery/tray2.jpg" alt="Catering tray 2"></div>
+          <div class="gallery-slide"><img src="photos/gallery/tray3.jpg" alt="Catering tray 3"></div>
+          <div class="gallery-slide"><img src="photos/gallery/tray4.jpg" alt="Catering tray 4"></div>
+          <div class="gallery-slide"><img src="photos/gallery/tray5.jpg" alt="Catering tray 5"></div>
+        </div>
       </div>
+      <p class="section-intro" style="margin-top:0.75rem;font-size:0.85rem;">
+        Swipe on mobile or scroll horizontally to see more.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISIT / MAP SECTION -->
+  <section id="visit">
+    <div class="container">
+      <h2>Find Us</h2>
+      <p class="section-intro">
+        Visit us in the heart of Jersey City’s Heights neighborhood. We’re easy to find and always happy to see you.
+      </p>
+    </div>
+
+    <!-- Full-width map -->
+    <div style="width:100%;border-top:1px solid rgba(0,0,0,0.08);border-bottom:1px solid rgba(0,0,0,0.08);">
+      <iframe
+        width="100%"
+        height="350"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Andrea+Salumeria,247+Central+Ave,Jersey+City,NJ&output=embed">
+      </iframe>
+    </div>
+
+    <div class="container" style="margin-top:1rem;">
+      <p><strong>Address:</strong> 247 Central Ave, Jersey City, NJ 07307</p>
+      <p>
+        <a href="https://www.google.com/maps/place/Andrea+Salumeria/@40.7434396,-74.0511387,17z/data=!4m15!1m8!3m7!1s0x89c2574048b7dc4d:0x61689fe0e35ef8a5!2sAndrea+Salumeria!8m2!3d40.743512!4d-74.051322!10e9!16s%2Fg%2F1tgf8prc!3m5!1s0x89c2574048b7dc4d:0x61689fe0e35ef8a5!8m2!3d40.743512!4d-74.051322!16s%2Fg%2F1tgf8prc"
+           target="_blank" rel="noopener">
+          Open in Google Maps
+        </a>
+      </p>
     </div>
   </section>
 
@@ -204,14 +295,45 @@
 <footer>
   <div class="container footer-inner">
     <div class="footer-meta">
-      <span>Andrea Salumeria — Fine Italian Deli & Grocery</span>
-      <span>Jersey City, NJ</span>
+      <div>
+        <strong>Andrea Salumeria</strong><br>
+        Fine Italian Deli &amp; Grocery<br>
+        247 Central Ave<br>
+        Jersey City, NJ 07307<br>
+        (201) 653‑1666
+      </div>
+      <div>
+        <strong>Hours</strong><br>
+        Monday – Friday: 8:00 AM – 6:00 PM<br>
+        Saturday: 8:00 AM – 5:00 PM<br>
+        Sunday: Closed
+      </div>
     </div>
 
-    <!-- Footer QR Code -->
-    <div class="qr-footer">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://ny88257ai.github.io/andrea.salumeria-/" class="qr-code">
-      <p class="qr-label">Scan Menu</p>
+    <div class="footer-social">
+      <span>Follow &amp; Find Us:</span>
+      <div class="social-icons">
+        <!-- Replace # with your real links when ready -->
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.yelp.com/" target="_blank" rel="noopener" aria-label="Yelp">
+          <i class="fab fa-yelp"></i>
+        </a>
+        <a href="https://www.google.com/maps/place/Andrea+Salumeria/@40.7434396,-74.0511387,17z" target="_blank" rel="noopener" aria-label="Google Maps">
+          <i class="fas fa-location-dot"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+
+    <div style="margin-top:0.5rem;font-size:0.75rem;opacity:0.8;">
+      © 2025 Andrea Salumeria — Fine Italian Deli &amp; Grocery
     </div>
   </div>
 </footer>
