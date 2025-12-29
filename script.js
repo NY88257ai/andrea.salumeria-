@@ -1,22 +1,40 @@
-const accordionHeaders = document.querySelectorAll(".accordion-header");
+// ---------------------------------------------
+// RUSTIC HERO IMAGE ROTATOR (Smooth Fade-In)
+// ---------------------------------------------
 
-accordionHeaders.forEach(header => {
-  header.addEventListener("click", () => {
-    const content = header.nextElementSibling;
+const heroImages = [
+  "photos/hero/hero1.jpg",
+  "photos/hero/hero2.jpg",
+  "photos/hero/hero3.jpg",
+  "photos/hero/hero4.jpg",
+  "photos/hero/hero5.jpg",
+  "photos/hero/herotray1.jpg",
+  "photos/hero/prosciuttodiparma.jpg",
+  "photos/hero/wassup.jpg"
+];
 
-    document.querySelectorAll(".accordion-content").forEach(item => {
-      if (item !== content) {
-        item.classList.remove("open");
-        item.style.maxHeight = null;
-      }
-    });
+let currentHero = 0;
+const heroElement = document.querySelector(".hero");
 
-    content.classList.toggle("open");
-
-    if (content.classList.contains("open")) {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-      content.style.maxHeight = null;
-    }
-  });
+// Preload images for smooth transitions
+heroImages.forEach(src => {
+  const img = new Image();
+  img.src = src;
 });
+
+// Apply first image immediately
+heroElement.style.backgroundImage = `url('${heroImages[0]}')`;
+heroElement.classList.add("fade-in");
+
+// Rotate images with soft fade
+setInterval(() => {
+  currentHero = (currentHero + 1) % heroImages.length;
+
+  heroElement.classList.remove("fade-in");
+
+  setTimeout(() => {
+    heroElement.style.backgroundImage = `url('${heroImages[currentHero]}')`;
+    heroElement.classList.add("fade-in");
+  }, 300);
+
+}, 6000);
