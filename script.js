@@ -37,4 +37,4 @@ setInterval(() => {
     heroElement.classList.add("fade-in");
   }, 300);
 
-}, 6000);
+}, 9000);
