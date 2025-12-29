@@ -1,5 +1,5 @@
 // ---------------------------------------------
-// RUSTIC HERO IMAGE ROTATOR (Smooth Fade-In)
+// HERO IMAGE ROTATOR (Smooth Fade)
 // ---------------------------------------------
 
 const heroImages = [
@@ -16,17 +16,17 @@ const heroImages = [
 let currentHero = 0;
 const heroElement = document.querySelector(".hero");
 
-// Preload images for smooth transitions
+// Preload images
 heroImages.forEach(src => {
   const img = new Image();
   img.src = src;
 });
 
-// Apply first image immediately
+// Apply first image
 heroElement.style.backgroundImage = `url('${heroImages[0]}')`;
 heroElement.classList.add("fade-in");
 
-// Rotate images with soft fade
+// Rotate images
 setInterval(() => {
   currentHero = (currentHero + 1) % heroImages.length;
 
@@ -38,3 +38,33 @@ setInterval(() => {
   }, 300);
 
 }, 9000);
+
+
+// ---------------------------------------------
+// ACCORDION MENU
+// ---------------------------------------------
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const content = header.nextElementSibling;
+    content.classList.toggle("open");
+
+    if (content.classList.contains("open")) {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = "0px";
+    }
+  });
+});
+
+
+// ---------------------------------------------
+// MOBILE NAV
+// ---------------------------------------------
+const navToggle = document.getElementById("nav-toggle");
+const navLinks = document.getElementById("nav-links");
+
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
