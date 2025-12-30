@@ -163,7 +163,7 @@ header {
   max-width: 550px;
   opacity: 0.9;
   margin-bottom: 1.5rem;
-  color: #4a3b2e;
+  color: var(--color-primary-dark);
 }
 
 /* Pills */
