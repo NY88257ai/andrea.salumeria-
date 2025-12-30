@@ -68,7 +68,7 @@ if (heroImages.length > 0 && heroVisual) {
   setInterval(rotateHero, heroDuration);
 }
 
-/* ========= GALLERY ========= */
+/* ========= GALLERY CAROUSEL ========= */
 const galleryImages = [
   "photos/gallery/footerhero1.jpg",
   "photos/gallery/footerhero2.jpg",
@@ -81,20 +81,20 @@ const galleryImages = [
   "photos/gallery/tray5.jpg"
 ];
 
-const galleryGrid = document.getElementById('gallery-grid');
+const galleryTrack = document.getElementById('gallery-track');
 
-if (galleryGrid && galleryImages.length > 0) {
+if (galleryTrack && galleryImages.length > 0) {
   galleryImages.forEach(src => {
-    const item = document.createElement('figure');
-    item.className = 'gallery-item';
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
 
     const img = document.createElement('img');
     img.src = src;
     img.alt = "";
     img.className = 'gallery-photo';
 
-    item.appendChild(img);
-    galleryGrid.appendChild(item);
+    slide.appendChild(img);
+    galleryTrack.appendChild(slide);
   });
 }
 
