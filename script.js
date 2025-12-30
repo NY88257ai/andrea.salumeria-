@@ -98,6 +98,32 @@
     });
   }
 
+/* ========= ACCORDION MENU ========= */
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(header => {
+  header.addEventListener("click", () => {
+    const content = header.nextElementSibling;
+
+    // Close all other sections (optional but recommended)
+    document.querySelectorAll(".accordion-content").forEach(section => {
+      if (section !== content) {
+        section.style.maxHeight = null;
+        section.classList.remove("open");
+      }
+    });
+
+    // Toggle this section
+    if (content.classList.contains("open")) {
+      content.style.maxHeight = null;
+      content.classList.remove("open");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.add("open");
+    }
+  });
+});
+
   /* ========= GOOGLE REVIEW BUTTON ========= */
   function openGoogleReview() {
     const reviewUrl = "https://www.google.com/maps/place/Andrea+Salumeria/data=!4m2!3m1!1s0x0:0x61689fe0e35ef8a5?sa=X";
