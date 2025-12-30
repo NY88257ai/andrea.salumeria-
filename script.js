@@ -17,56 +17,39 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-/* ========= HERO ROTATOR ========= */
+/* ========= HERO FADE ROTATOR ========= */
 let heroImages = [
   "photos/hero/hero1.jpg",
   "photos/hero/hero2.jpg",
   "photos/hero/hero3.jpg",
   "photos/hero/hero4.jpg",
   "photos/hero/hero5.jpg",
-  "photos/hero/herotray1.jpg",
+  "photos/hero/herotrya1.jpg",
   "photos/hero/prosciuttodiparma.jpg",
   "photos/hero/wassup.jpg"
 ];
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
 shuffle(heroImages);
 
-const heroVisual = document.getElementById('hero-visual');
-let currentHeroIndex = 0;
-const heroDuration = 6000;
-
-function showHeroImage(index) {
-  if (!heroVisual || heroImages.length === 0) return;
-
-  heroVisual.style.opacity = 0;
-
-  setTimeout(() => {
-    heroVisual.style.backgroundImage = `url("${heroImages[index]}")`;
-
-    requestAnimationFrame(() => {
-      heroVisual.classList.add('hero-visual--active');
-      heroVisual.style.opacity = 1;
-    });
-  }, 200);
-}
+let heroIndex = 0;
+const heroEl = document.querySelector(".hero");
 
 function rotateHero() {
-  heroVisual.classList.remove('hero-visual--active');
-  currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-  showHeroImage(currentHeroIndex);
+  if (!heroEl) return;
+
+  heroEl.classList.add("fade");
+
+  setTimeout(() => {
+    heroEl.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+    heroEl.classList.remove("fade");
+
+    heroIndex = (heroIndex + 1) % heroImages.length;
+  }, 800); // matches fade duration
 }
 
-if (heroImages.length > 0 && heroVisual) {
-  showHeroImage(currentHeroIndex);
-  setInterval(rotateHero, heroDuration);
-}
+setInterval(rotateHero, 4000);
+rotateHero();
+
 
 /* ========= GALLERY CAROUSEL AUTO-SCROLLING SLIDE CAROUSEL ========= */
 const galleryImages = [
