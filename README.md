@@ -1,9 +1,8 @@
+![Andrea Salumeria Banner](photos/screenshots/banner.png)
+
+
 🍅 Andrea Salumeria — Official Website
 Fine Italian Deli & Grocery • Jersey City, NJ • Since 1975
-
-  
-  
-  
 
 This repository contains the complete source code for the official website of Andrea Salumeria, a family‑owned Italian deli serving Jersey City for nearly 50 years.
 The site showcases our menu, homemade mozzarella, imported specialties, history, and photography — all wrapped in a warm, classic Italian aesthetic.
@@ -11,8 +10,9 @@ The site showcases our menu, homemade mozzarella, imported specialties, history,
 🌐 Live Website
 https://ny88257ai.github.io/andrea.salumeria/
 
-Scan to open on mobile:
+![QR Code](photos/screenshots/qr.png)
 
+> Scan this code to open Andrea Salumeria on your phone. (New qr code needs to be created once move to prod)!!!
 
 📸 Screenshots
 Screenshots can be added here later. Just drop images into /photos/screenshots/ and reference them.
