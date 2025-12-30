@@ -143,11 +143,10 @@ header {
 
 /* Eyebrow */
 .hero-eyebrow {
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+  color: var(--color-accent); /* your green */
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  opacity: 0.85;
-  color: #5a4634;
+  font-weight: 600;
 }
 
 /* Title */
