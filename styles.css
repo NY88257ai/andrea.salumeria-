@@ -306,7 +306,9 @@ header {
   margin-bottom: 0.75rem;
 }
 
-/* ========= CAROUSEL GALLERY (REQUIRED) ========= */
+/* --------------------------------------------------
+   GALLERY — CAROUSEL
+-------------------------------------------------- */
 .gallery-carousel {
   overflow-x: auto;
   padding-bottom: 1rem;
@@ -360,10 +362,6 @@ footer {
   gap: 4rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-}
-
-.footer-social {
-  margin-bottom: 1rem;
 }
 
 .social-icons {
