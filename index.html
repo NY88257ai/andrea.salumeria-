@@ -663,21 +663,21 @@
   </div>
 </footer>
 
-// ========= MOBILE NAV =========	
+<!-- ========= MOBILE NAV + ALL OTHER JS ========= -->
 <script>
+  // ========= MOBILE NAV =========
   const toggle = document.querySelector('.nav-toggle');
   const nav    = document.querySelector('.nav-links');
 
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('nav-open');
+      nav.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked (mobile UX)
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('nav-open');
-      });
+    // Close menu on ANY click inside nav-links
+    nav.addEventListener('click', (event) => {
+      if (event.target.closest('.accordion-header')) return;
+      nav.classList.remove('open');
     });
   }
 
@@ -688,24 +688,17 @@
   }
 
   // ========= HERO ROTATOR =========
-  // IMPORTANT:
-  // 1) Place hero photos in: photos/hero/
-  // 2) Add their filenames to this array
-  // 3) The script will randomize order on each page load
-
   let heroImages = [
     "photos/hero/hero1.jpg",
-  	"photos/hero/hero2.jpg",
-  	"photos/hero/hero3.jpg",
-  	"photos/hero/hero4.jpg",
-  	"photos/hero/hero5.jpg",
-  	"photos/hero/herotray1.jpg",
-  	"photos/hero/prosciuttodiparma.jpg",
-	// Add more hero images here, e.g.:	
-  	"photos/hero/wassup.jpg"	
+    "photos/hero/hero2.jpg",
+    "photos/hero/hero3.jpg",
+    "photos/hero/hero4.jpg",
+    "photos/hero/hero5.jpg",
+    "photos/hero/herotray1.jpg",
+    "photos/hero/prosciuttodiparma.jpg",
+    "photos/hero/wassup.jpg"
   ];
 
-  // Shuffle heroImages array for random order
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -717,16 +710,14 @@
 
   const heroVisual = document.getElementById('hero-visual');
   let currentHeroIndex = 0;
-  const heroDuration = 6000; // 6 seconds per image
+  const heroDuration = 6000;
 
   function showHeroImage(index) {
     if (!heroVisual || heroImages.length === 0) return;
     const src = heroImages[index];
     heroVisual.style.opacity = 0;
-    // Small timeout to let opacity transition reset
     setTimeout(() => {
       heroVisual.style.backgroundImage = `url("${src}")`;
-      // Trigger "active" state which handles zoom + fade
       requestAnimationFrame(() => {
         heroVisual.classList.add('hero-visual--active');
         heroVisual.style.opacity = 1;
@@ -749,61 +740,59 @@
     setInterval(rotateHero, heroDuration);
   }
 
-// ========= GALLERY =========
-const galleryImages = [
-  "photos/gallery/footerhero1.jpg",
-  "photos/gallery/footerhero2.jpg",
-  "photos/gallery/homemadepestopasta.jpg",
-  "photos/gallery/saladtray1.jpg",
-  "photos/gallery/tray1.jpg",
-  "photos/gallery/tray2.jpg",
-  "photos/gallery/tray3.jpg",
-  "photos/gallery/tray4.jpg",
-  "photos/gallery/tray5.jpg"
-];
+  // ========= GALLERY =========
+  const galleryImages = [
+    "photos/gallery/footerhero1.jpg",
+    "photos/gallery/footerhero2.jpg",
+    "photos/gallery/homemadepestopasta.jpg",
+    "photos/gallery/saladtray1.jpg",
+    "photos/gallery/tray1.jpg",
+    "photos/gallery/tray2.jpg",
+    "photos/gallery/tray3.jpg",
+    "photos/gallery/tray4.jpg",
+    "photos/gallery/tray5.jpg"
+  ];
 
-const galleryTrack = document.getElementById("gallery-track");
+  const galleryTrack = document.getElementById("gallery-track");
 
-if (galleryTrack && galleryImages.length > 0) {
-  galleryImages.forEach(src => {
-    const slide = document.createElement("div");
-    slide.className = "gallery-slide";
+  if (galleryTrack && galleryImages.length > 0) {
+    galleryImages.forEach(src => {
+      const slide = document.createElement("div");
+      slide.className = "gallery-slide";
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "";
-    img.className = "gallery-photo";
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "";
+      img.className = "gallery-photo";
 
-    slide.appendChild(img);
-    galleryTrack.appendChild(slide);
-  });
+      slide.appendChild(img);
+      galleryTrack.appendChild(slide);
+    });
 
-  let scrollAmount = 0;
-  const slideWidth = 260 + 16;
+    let scrollAmount = 0;
+    const slideWidth = 260 + 16;
 
-  function autoScrollCarousel() {
-    scrollAmount += slideWidth;
+    function autoScrollCarousel() {
+      scrollAmount += slideWidth;
 
-    if (scrollAmount >= galleryTrack.scrollWidth - galleryTrack.clientWidth) {
-      scrollAmount = 0;
+      if (scrollAmount >= galleryTrack.scrollWidth - galleryTrack.clientWidth) {
+        scrollAmount = 0;
+      }
+
+      galleryTrack.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
     }
 
-    galleryTrack.scrollTo({
-      left: scrollAmount,
-      behavior: "smooth"
-    });
+    setInterval(autoScrollCarousel, 2500);
   }
 
-  setInterval(autoScrollCarousel, 2500);
-}
   // ========= GOOGLE REVIEW BUTTON =========
   function openGoogleReview() {
-    // For now, we’ll use the main Maps listing link.
-    // If you later obtain the direct "write a review" URL, replace below.
     const reviewUrl = "https://www.google.com/maps/place/Andrea+Salumeria/data=!4m2!3m1!1s0x0:0x61689fe0e35ef8a5?sa=X";
     window.open(reviewUrl, "_blank");
   }
 </script>
-
 </body>
 </html>
