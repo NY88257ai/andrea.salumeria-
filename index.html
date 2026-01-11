@@ -658,22 +658,29 @@
   <div class="container footer-inner">
     <div>© <span id="year"></span> Andrea Salumeria. All rights reserved.</div>
     <div class="footer-meta">
-      <span>Fine Italian Deli &amp; Grocery • Since 1975</span>
-      <span>Homemade Mozzarella • Famous Italian Sandwiches • Imported Specialties Website • Created by SICUREZZA NINJA™</span>
+      <span>Website Created by SICUREZZA NINJA™</span>
 	</div>
   </div>
 </footer>
 
+// ========= MOBILE NAV =========	
 <script>
-  // ========= MOBILE NAV =========
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const toggle = document.querySelector('.nav-toggle');
+  const nav    = document.querySelector('.nav-links');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
+
+    // Close menu when a link is clicked (mobile UX)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+      });
     });
   }
+</script>	
 
   // ========= FOOTER YEAR =========
   const yearEl = document.getElementById('year');
@@ -743,8 +750,7 @@
     setInterval(rotateHero, heroDuration);
   }
 
-  // ========= GALLERY =========
- // ========= GALLERY =========
+// ========= GALLERY =========
 const galleryImages = [
   "photos/gallery/footerhero1.jpg",
   "photos/gallery/footerhero2.jpg",
